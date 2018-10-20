@@ -1,6 +1,6 @@
 <template lang="pug">
 
-  article(class="card active")
+  article(class="card" :class="{ active: checked }")
 
     header(class="card__title")
       h3(class="card__title__text") {{ title }}
@@ -10,7 +10,7 @@
         li(v-for="item in items" class="card__list__item")
           span(class="card__list__item__text")  {{ item }}
 
-    button(class="card__btn-container active" @click="isChecked")
+    div(class="card__btn-container" :class="{ active: checked }" @click="isChecked")
       input(class="card__btn-container__input" type="radio" :checked="checked")
       span(class="card__btn-container__custom-input")
       | Elegir régimen
@@ -62,6 +62,7 @@ export default {
 
     &.active {
       border: 1px solid $card-border-color-active;
+      transition: border .2s linear;
     }
 
     &__title {
@@ -104,11 +105,13 @@ export default {
       margin: 0 16px 18px;
       font-size: 16px;
       padding: 15px 25px;
-      outline: none;
-      border: none;
+      transition: border 4s linear;
+      border: 1px solid $white-01;
+      transition: border .2s linear;
 
       &.active {
         border: 1px solid $card-border-color-active;
+        transition: border .2s linear;
       }
 
       &__input {
@@ -129,14 +132,14 @@ export default {
           width: 16px;
           border: 1px solid $card-input-border-color;
           border-radius: 50%;
-          transition: all .4s linear;
+          transition: all 4s linear;
           margin-right: 13px;
 
           &::after {
             content: "";
             display: none;
             opacity: 0;
-            animation-name: fadeIn; animation-duration: .4s; animation-timing-function: linear;
+            animation-name: fadeIn; animation-duration: .2s; animation-timing-function: linear;
             top: 50%;
             left: 50%;;
             width: 10px;
