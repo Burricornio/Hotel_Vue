@@ -1,0 +1,39 @@
+// Web container
+$app-container-size: 1200px;
+
+// Font families
+$main-font-family: 'Roboto', sans-serif;
+$secondary-font-family: 'Roboto Slab', serif;
+
+
+// Font sizes
+$font-size-base: 14px;
+$font-size-small: $font-size-base - 2px;
+$font-size-large: $font-size-base + 5px;
+$font-size-h1: $font-size-base + 16px;
+$font-size-h2: $font-size-base + 6px;
+
+// Base color
+$blue-01: #003970;
+$blue-02: #4BA7EE;
+$blue-03: #C9E3F9;
+$blue-04: #105AA3;
+$blue-05: #001841;
+$blue-06: #033970;
+$blue-07: #326C96;
+$gray-01: #F9F9F9;
+$gray-02: #9DA2A9;
+$gray-03: rgba(222, 225, 232, .38);
+$gray-04: #8B9199;
+$green-01: #6DC138;
+$white-01: #fff;
+
+// Responsive
+$mobile-portrait-width: 500px;
+$mobile-landscape-width: 767px;
+$tablet-portrait-width: 768px;
+$tablet-landscape-width: 1024px;
+
+// Footer
+$footer-background-color: rgb(41,41,41);
+$footer-font-color: rgb(255,255,255);
