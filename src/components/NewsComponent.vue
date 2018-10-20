@@ -49,8 +49,14 @@ export default {
         font-size: 14px;
 
         &::after {
-          content: url('../assets/accordion-component/angle-down-blue.svg');
-          margin-right: 20px;
+          content: '';
+          background-image: url('../assets/accordion-component/angle-down-blue.svg');
+          width: 14px;
+          height: 21px;
+          display: block;
+          float: right;
+          margin-left: 8px;
+          background-size: 14px 21px;
         }
       }
     }
