@@ -5,14 +5,15 @@
 
       div(
         class="tabs-container__tabs__item active"
-        @click="changeTab($event, 'item1')"
+        @click="changeTab($event, 'tab1')"
         ref="button1") Tab 1
 
       div(
         class="tabs-container__tabs__item"
-        @click="changeTab($event, 'item2')"
+        @click="changeTab($event, 'tab2')"
         ref="button2") Tab 2
 
+    //- Tab 1
     section(class='tabs-container__content active' ref="tab1")
 
       div(class="tabs-container__content__title")
@@ -67,17 +68,12 @@
       //- div(class="panel")
       //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-    //- //- Tab 2
-    //- div(id='Tokyo' class='tabcontent' ref="item2")
-    //-   h3 Tokyo
-    //-   p Tokyo is the capital of Japan.
+    //- Tab 2
+    section(class='tabs-container__content' ref="tab2")
+      div(id='Tokyo' class='tabcontent' ref="item2")
+        h3 Tokyo
+        p Tokyo is the capital of Japan.
 
-    //-   //- boton
-
-    //-   br
-    //-   br
-
-    //-   //- boton
 </template>
 
 <script>
@@ -87,16 +83,15 @@ export default {
   name: 'TabsComponent',
   components: { CardComponent },
   methods: {
-    changeTab (e, item) {
-      // Elimina clase activa tanto del contenido mostrado como de los botones
-      for (var element in this.$refs) {
-        this.$refs[element].classList.remove('active')
-      }
-      // Añade la clase activa al botón seleccionado
+    // Metodo para desplazarse entre las tabs
+    changeTab (e, tab) {
+      // Elimina clase activa tanto del contenido y de las tabs
+      Object.keys(this.$refs).forEach(element => this.$refs[element].classList.remove('active'))
+      // Añade la clase activa a la tab seleccionada
       e.target.classList.add('active')
 
       // Añade la clase active al item seleccionado
-      this.$refs[item].classList.add('active')
+      this.$refs[tab].classList.add('active')
     },
     accordionFunction (e) {
       // Toggle sobre la calse 'active' en el botón
