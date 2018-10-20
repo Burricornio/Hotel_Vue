@@ -31,9 +31,11 @@ export default {
 
   .accordion-container {
     border: $accordion-border;
+    padding: 0 30px;
 
     &__btn {
       background-color: $accordion-bgcolor;
+      width: 100%;
       height: $accordion-height;
       font-family: $accordion-font-family-title;
       color: $accordion-title-color;
@@ -41,15 +43,11 @@ export default {
       font-weight: 700;
       line-height: 38px;
       cursor: pointer;
-      padding: 0 30px;
       border: none;
       text-align: left;
       outline: none;
       transition: 0.4s;
-
-      // &.active, &:hover {
-      //   background: red;
-      // }
+      padding: 0;
 
       &::before {
         content: url('../assets/accordion-component/angle-down-blue.svg');
@@ -68,12 +66,12 @@ export default {
       }
 
       &.active::before {
+        content: url('../assets/accordion-component/angle-down-blue.svg');
         transform: rotate(-180deg) translateY(19%);
       }
     }
 
     &__content {
-      padding: 0 18px;
       background-color: white;
       max-height: 0;
       overflow: hidden;

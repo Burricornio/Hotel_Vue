@@ -62,7 +62,7 @@
       accordion-component(
         title="Servicios de habitación"
       )
-        p(class="prueba") Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.... lolol
+        news-component
 
 </template>
 
@@ -70,10 +70,11 @@
 // Imports de componentes
 import AccordionComponent from '@/components/AccordionComponent'
 import CardComponent from '@/components/CardComponent'
+import NewsComponent from '@/components/NewsComponent'
 
 export default {
   name: 'TabsComponent',
-  components: { AccordionComponent, CardComponent },
+  components: { AccordionComponent, CardComponent, NewsComponent },
   methods: {
     // Metodo para desplazarse entre las tabs
     changeTab (e, tab) {
