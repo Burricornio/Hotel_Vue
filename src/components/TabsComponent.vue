@@ -55,33 +55,25 @@
           title="Unlimited Services"
           :items="['Restaurante buffet con bebidas Premium', 'Restaurante a la carta (una cena por estancia)', 'Snack Bar con bebidas Premium', 'Minibar incluido', 'Acceso a SPA y 45 minutos de masaje por persona', 'Actividades deportivas (acuáticas sin motor)', 'Caja fuerte', 'Parking gratuito', 'Lavandería']"
         )
-      //- Accordion
-      //- button(class="accordion" @click="accordionFunction($event)") Section 1
-      //- div(class="panel")
-      //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-      //- button(class="accordion"  @click="accordionFunction($event)") Section 2
-      //- div(class="panel")
-      //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-      //- button(class="accordion"  @click="accordionFunction($event)") Section 3
-      //- div(class="panel")
-      //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
     //- Tab 2
     section(class='tabs-container__content' ref="tab2")
-      div(id='Tokyo' class='tabcontent' ref="item2")
-        h3 Tokyo
-        p Tokyo is the capital of Japan.
+
+      accordion-component(
+        title="Servicios de habitación"
+      )
+        p(class="prueba") Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm.... lolol
 
 </template>
 
 <script>
+// Imports de componentes
+import AccordionComponent from '@/components/AccordionComponent'
 import CardComponent from '@/components/CardComponent'
 
 export default {
   name: 'TabsComponent',
-  components: { CardComponent },
+  components: { AccordionComponent, CardComponent },
   methods: {
     // Metodo para desplazarse entre las tabs
     changeTab (e, tab) {
@@ -89,15 +81,8 @@ export default {
       Object.keys(this.$refs).forEach(element => this.$refs[element].classList.remove('active'))
       // Añade la clase activa a la tab seleccionada
       e.target.classList.add('active')
-
       // Añade la clase active al item seleccionado
       this.$refs[tab].classList.add('active')
-    },
-    accordionFunction (e) {
-      // Toggle sobre la calse 'active' en el botón
-      e.target.classList.toggle('active')
-      // Toggle sobre el panel con la clase 'show'
-      e.target.nextSibling.classList.toggle('show')
     }
   }
 }
@@ -145,6 +130,7 @@ export default {
       width: 100%;
       background: $tabs-content-color;
       display: none;
+      padding-top: 40px;
 
       &.active {
         display: block;
