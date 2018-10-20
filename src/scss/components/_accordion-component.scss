@@ -2,11 +2,14 @@
 $accordion-bgcolor: $white-01;
 $accordion-title-color: $blue-02;
 $accordion-title-optional-color: $blue-04;
+$accordion-label-bgcolor: $red-01;
+$accordion-label-color: $white-01;
 
 
 // Fuentes
-$accordion-font-family-title: $secondary-font-family;
-$accordion-font-family-title-optional: $main-font-family;
+$accordion-label-font-family: $main-font-family;
+$accordion-title-font-family: $secondary-font-family;
+$accordion-title-optional-font-family: $main-font-family;
 
 // General
 $accordion-border: 1px solid $gray-05;

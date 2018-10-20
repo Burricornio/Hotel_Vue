@@ -1,5 +1,6 @@
 <template lang="pug">
   div(class="accordion-container")
+    span(class="accordion-container__label") EXCLUSIVO HOTELES.COM
     button(class="accordion-container__btn" @click="accordionAction($event)") {{ title }}
     div(class="accordion-container__content")
       slot
@@ -32,12 +33,26 @@ export default {
   .accordion-container {
     border: $accordion-border;
     padding: 0 30px;
+    position: relative;
+
+    &__label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $accordion-label-bgcolor;
+      font-family: $accordion-label-font-family;
+      font-weight: 400;
+      color: $accordion-label-color;
+      font-size: 12px;
+      letter-spacing: 1.52px;
+      padding: 5px 20px;
+    }
 
     &__btn {
       background-color: $accordion-bgcolor;
       width: 100%;
       height: $accordion-height;
-      font-family: $accordion-font-family-title;
+      font-family: $accordion-title-font-family;
       color: $accordion-title-color;
       font-size: 24px;
       font-weight: 700;
@@ -57,7 +72,7 @@ export default {
 
       &::after {
         content: 'Opcional';
-        font-family: $accordion-font-family-title-optional;
+        font-family: $accordion-title-optional-font-family;
         color: $accordion-title-optional-color;
         font-weight: 400;
         font-size: 12px;

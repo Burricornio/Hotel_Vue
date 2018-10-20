@@ -4,6 +4,7 @@
     div(class="news-container__item")
       h2(class="news-container__item__title") Olvídese de la rutina
       p(class="news-container__item__body") Cras vehicula vestibulum dapibus. Pellentesque auctor dolor et purus facilisis maximus. Mauris eget urna luctus, imperdiet neque nec, aliquet lorem.
+      span(class="news-container__item__info") Más información y condiciones
 </template>
 
 <script>
@@ -39,6 +40,18 @@ export default {
         font-family: $news-body-font-family;
         font-size: 14px;
         padding-right: 280px;
+      }
+
+      &__info {
+        color: $news-info-color;
+        font-family: $news-info-font-family;
+        font-weight: 700;
+        font-size: 14px;
+
+        &::after {
+          content: url('../assets/accordion-component/angle-down-blue.svg');
+          margin-right: 20px;
+        }
       }
     }
   }
