@@ -32,12 +32,17 @@ export default {
 
   .accordion-container {
     border: $accordion-border;
-    padding: 0 30px;
+    padding-left: 6px;
     position: relative;
     background: $accordion-container-bgcolor;
+    margin: 0 10px;
 
     ~ .accordion-container {
       margin-top: 24px;
+    }
+
+    @include if-tablet-portrait {
+      padding: 0 30px;
     }
 
     &__label {
@@ -48,9 +53,13 @@ export default {
       font-family: $accordion-label-font-family;
       font-weight: 400;
       color: $accordion-label-color;
-      font-size: 12px;
+      font-size: 7px;
       letter-spacing: 1.52px;
       padding: 5px 20px;
+
+      @include if-tablet-portrait {
+        font-size: 12px;
+      }
     }
 
     &__btn {
@@ -59,7 +68,7 @@ export default {
       height: $accordion-height;
       font-family: $accordion-title-font-family;
       color: $accordion-title-color;
-      font-size: 24px;
+      font-size: 21px;
       font-weight: 700;
       line-height: 38px;
       cursor: pointer;
@@ -68,11 +77,19 @@ export default {
       outline: none;
       padding: 0;
 
+      @include if-tablet-portrait {
+        font-size: 24px;
+      }
+
       &::before {
         content: url('../assets/accordion-component/angle-down-blue.svg');
-        margin-right: 20px;
+        margin-right: 6px;
         transition: all .2s linear;
         float: left;
+
+        @include if-tablet-portrait {
+          margin-right: 20px;
+        }
       }
 
       &::after {
