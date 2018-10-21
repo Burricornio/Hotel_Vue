@@ -1,0 +1,17 @@
+@mixin if-mobile-portrait {
+  @media (max-width: #{$mobile-portrait-width}) {
+      @content;
+  }
+}
+
+@mixin if-tablet-portrait {
+  @media (min-width: #{$tablet-portrait-width}) {
+      @content;
+  }
+}
+
+@mixin cards-styles {
+  @media (min-width: #{$cards-styles-width}) {
+      @content;
+  }
+}

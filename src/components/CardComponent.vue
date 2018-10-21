@@ -51,14 +51,27 @@ export default {
   .card {
     @include display-flex($justify: space-between, $direction: column);
     background: $card-color;
-    width: $card-max-width;
-    max-width: $card-max-width;
     border: 1px solid $card-border-color;
     font-family: $card-font-family;
-    min-height: $card-min-height;
+    margin: 20px 0;
+    width: 70%;
 
-    ~ .card {
-      margin-left: $card-margin-left;
+    @include if-tablet-portrait {
+      width: 40%;
+      min-height: 330px;
+
+      &:nth-child(even)  {
+        margin-left: 20px;
+      }
+    }
+
+    @include cards-styles {
+      min-height: 489px;
+      width: 225px;
+
+      ~ .card {
+        margin-left: 7px;
+      }
     }
 
     &.active {

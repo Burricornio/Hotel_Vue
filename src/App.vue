@@ -15,7 +15,7 @@ export default {
 @import '~scss/application';
 
 #app {
-  width: $app-container-size;
+  max-width: $app-container-size;
   margin: 0 auto;
 }
 </style>

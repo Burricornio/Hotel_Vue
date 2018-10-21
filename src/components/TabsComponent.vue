@@ -128,6 +128,12 @@ export default {
         color: $tabs-color;
         transition: color .3s linear;
         border-bottom: 2px solid $white-01;
+        width: 50%;
+        text-align: center;
+
+        @include if-tablet-portrait {
+          width: auto;
+        }
 
         &:hover {
           border-bottom: 2px solid $tabs-color;
@@ -154,11 +160,15 @@ export default {
       }
 
       &__title {
-        @include display-flex;
+        @include display-flex($direction: column);
         color: $blue-01;
         font-size: $tabs-title-font-size;
         text-align: center;
         font-family: $secondary-font-family;
+
+        @include if-tablet-portrait {
+          flex-direction: row;
+        }
 
         &__category {
           font-weight: 400;
@@ -170,6 +180,7 @@ export default {
           font-weight: 700;
           font-size: $tabs-title-font-size;
           margin: 0;
+          padding: 0 20px;
         }
 
         &__stars {
@@ -182,8 +193,13 @@ export default {
       }
 
       &__cards-container {
-        @include display-flex;
-        margin-top: 43px;
+        @include display-flex($direction: column);
+
+        @include if-tablet-portrait {
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-top: 10px;
+        }
       }
     }
   }
