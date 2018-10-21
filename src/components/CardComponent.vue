@@ -10,9 +10,9 @@
         li(v-for="item in items" class="card__list__item")
           span(class="card__list__item__text")  {{ item }}
 
-    div(class="card__btn-container" :class="{ active: checked }" @click="isChecked")
-      input(class="card__btn-container__input" type="radio" :checked="checked")
-      span(class="card__btn-container__custom-input")
+    div(class="card__action-container" :class="{ active: checked }" @click="isChecked")
+      input(class="card__action-container__input" type="radio" :checked="checked")
+      span(class="card__action-container__custom-input")
       | Elegir régimen
 
 </template>
@@ -98,16 +98,16 @@ export default {
       }
     }
 
-    &__btn-container {
+    &__action-container {
       @include display-flex;
       background-color: $card-button-color;
       color: $card-button-text-color;
       margin: 0 16px 18px;
       font-size: 16px;
       padding: 15px 25px;
-      transition: border 4s linear;
       border: 1px solid $white-01;
       transition: border .2s linear;
+      cursor: pointer;
 
       &.active {
         border: 1px solid $card-border-color-active;
@@ -117,7 +117,7 @@ export default {
       &__input {
         display: none;
 
-       &:checked ~ .card__btn-container__custom-input {
+       &:checked ~ .card__action-container__custom-input {
           border-color: $card-input-color;
 
           &::after {
@@ -132,7 +132,6 @@ export default {
           width: 16px;
           border: 1px solid $card-input-border-color;
           border-radius: 50%;
-          transition: all 4s linear;
           margin-right: 13px;
 
           &::after {

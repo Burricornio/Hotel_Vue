@@ -61,13 +61,13 @@ export default {
       border: none;
       text-align: left;
       outline: none;
-      transition: 0.4s;
       padding: 0;
 
       &::before {
         content: url('../assets/accordion-component/angle-down-blue.svg');
         margin-right: 20px;
         transition: all .2s linear;
+        float: left;
       }
 
       &::after {
@@ -81,8 +81,7 @@ export default {
       }
 
       &.active::before {
-        content: url('../assets/accordion-component/angle-down-blue.svg');
-        transform: rotate(-180deg) translateY(19%);
+        transform: rotate(-180deg) translateY(-7%);
       }
     }
 
@@ -90,7 +89,7 @@ export default {
       background-color: white;
       max-height: 0;
       overflow: hidden;
-      transition: 0.6s ease-in-out;
+      transition: .5s ease-in-out;
       opacity: 0;
 
       &.show {
