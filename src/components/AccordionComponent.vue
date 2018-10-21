@@ -32,7 +32,6 @@ export default {
 
   .accordion-container {
     border: $accordion-border;
-    padding-left: 6px;
     position: relative;
     background: $accordion-container-bgcolor;
     margin: 0 10px;
@@ -75,10 +74,11 @@ export default {
       border: none;
       text-align: left;
       outline: none;
-      padding: 0;
+      padding: 0 0 0 6px;
 
       @include if-tablet-portrait {
         font-size: 24px;
+        padding: 0;
       }
 
       &::before {
