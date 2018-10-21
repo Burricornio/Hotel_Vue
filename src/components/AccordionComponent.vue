@@ -34,6 +34,7 @@ export default {
     border: $accordion-border;
     padding: 0 30px;
     position: relative;
+    background: $accordion-container-bgcolor;
 
     ~ .accordion-container {
       margin-top: 24px;

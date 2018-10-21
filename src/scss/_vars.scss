@@ -5,14 +5,6 @@ $app-container-size: 1200px;
 $main-font-family: 'Roboto', sans-serif;
 $secondary-font-family: 'Roboto Slab', serif;
 
-
-// Font sizes
-$font-size-base: 14px;
-$font-size-small: $font-size-base - 2px;
-$font-size-large: $font-size-base + 5px;
-$font-size-h1: $font-size-base + 16px;
-$font-size-h2: $font-size-base + 6px;
-
 // Base color
 $blue-01: #003970;
 $blue-02: #4BA7EE;
@@ -37,7 +29,3 @@ $mobile-portrait-width: 500px;
 $mobile-landscape-width: 767px;
 $tablet-portrait-width: 768px;
 $tablet-landscape-width: 1024px;
-
-// Footer
-$footer-background-color: rgb(41,41,41);
-$footer-font-color: rgb(255,255,255);
