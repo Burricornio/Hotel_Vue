@@ -77,7 +77,6 @@ export default {
     }
 
     .row {
-      //  @include display-flex($justify: flex-start);
        @include display-flex($justify: flex-start, $direction: column);
        width: 100%;
 
@@ -114,10 +113,6 @@ export default {
           color: $info-body-color;
           font-family: $info-body-font-family;
           font-size: 14px;
-
-          @include if-tablet-portrait {
-            // padding-right: 280px;
-          }
         }
       }
 
@@ -156,10 +151,6 @@ export default {
       transition: all .5s ease-in-out;
       opacity: 0;
       margin-top: 18px;
-
-      @include if-tablet-portrait {
-        // padding-left: 80px;
-      }
 
       &.show {
         opacity: 1;
