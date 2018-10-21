@@ -111,6 +111,7 @@ export default {
         font-family: $news-info-font-family;
         font-weight: 700;
         font-size: 14px;
+        cursor: pointer;
 
         &::after {
           content: '';

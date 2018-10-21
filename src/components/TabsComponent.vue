@@ -169,6 +169,7 @@ export default {
         &__name {
           font-weight: 700;
           font-size: $tabs-title-font-size;
+          margin: 0;
         }
 
         &__stars {
@@ -182,6 +183,7 @@ export default {
 
       &__cards-container {
         @include display-flex;
+        margin-top: 43px;
       }
     }
   }

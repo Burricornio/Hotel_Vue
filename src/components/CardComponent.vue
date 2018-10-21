@@ -2,13 +2,14 @@
 
   article(class="card" :class="{ active: checked }")
 
-    header(class="card__title")
-      h3(class="card__title__text") {{ title }}
-      div(class="card__title__line")
+    div(class="card__info")
+      header(class="card__info__title")
+        h3(class="card__info__title__text") {{ title }}
+        div(class="card__info__title__line")
 
-      ul(class="card__list")
-        li(v-for="item in items" class="card__list__item")
-          span(class="card__list__item__text")  {{ item }}
+      ul(class="card__info__list")
+        li(v-for="item in items" class="card__info__list__item")
+          span(class="card__info__list__item__text")  {{ item }}
 
     div(class="card__action-container" :class="{ active: checked }" @click="isChecked")
       input(class="card__action-container__input" type="radio" :checked="checked")
@@ -65,35 +66,45 @@ export default {
       transition: border .2s linear;
     }
 
-    &__title {
-      @include display-flex($direction: column);
+    &__info {
+      @include display-flex($justify: space-between, $direction: column);
+      width: 100%;
 
-      &__text {
+      &__title {
         @include display-flex($direction: column);
-        text-align: center;
-        color: $card-title-color;
-        font-size: 16px;
-        font-weight: 700;
-        padding: 0 30px;
-        min-height: 40px;
-        margin: 16px 0;
-      }
-
-      &__line {
-        width: 70px;
-        border-bottom: 1px solid $blue-03;
-      }
-    }
-
-    &__list {
-      font-size: 15px;
-
-      &__item {
-        color: $card-list-circle-color;
-        margin-bottom: 6px;
 
         &__text {
-          color: $card-list-text-color;
+          @include display-flex($direction: column);
+          text-align: center;
+          color: $card-title-color;
+          font-size: 16px;
+          font-weight: 700;
+          padding: 0 30px;
+          min-height: 40px;
+          margin: 16px 0;
+        }
+
+        &__line {
+          width: 70px;
+          border-bottom: 1px solid $blue-03;
+        }
+      }
+
+      &__list {
+        display: inline-flex;
+        font-size: 15px;
+        flex-direction: column;
+        max-width: 225px;
+        padding-right: 10px;
+        padding-left: 28px;
+
+        &__item {
+          color: $card-list-circle-color;
+          margin-bottom: 3px;
+
+          &__text {
+            color: $card-list-text-color;
+          }
         }
       }
     }
