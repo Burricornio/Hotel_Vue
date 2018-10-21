@@ -94,7 +94,7 @@ export default {
 
       &.show {
         opacity: 1;
-        max-height: 500px;
+        max-height: 100%;
       }
     }
   }

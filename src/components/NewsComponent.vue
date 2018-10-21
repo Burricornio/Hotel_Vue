@@ -14,10 +14,10 @@
             p(class="news-container__item__text__body__p") Las experiencias spa de agua tienen una presencia muy especial en SPA Sensations. No es extraño si consideramos que la mayor parte del planeta, así como del propio cuerpo humano, están compuestos de agua.
             p(class="news-container__item__text__body__p") El arte de recrear experiencias de agua en variaciones ilimitadas es la base de la propuesta de SPA Sensations a sus clientes, aportando el refinamiento al baño y a la hidratación en todas sus formas. Un mundo mágico de posibilidades, más allá de la terapia y del que ahora usted, también podrá disfrutar.
 
-        span(class="news-container__item__info") Más información y condiciones
+        span(class="news-container__item__info" @click="moreInfoAction($event)") Más información y condiciones
 
     div(class="row")
-      div(class="news-container__more-info")
+      div(class="news-container__more-info" :class="{ show: moreInfoSelected }")
 
         h3(class="news-container__more-info__title") Incluye
 
@@ -35,7 +35,21 @@
 
 <script>
 export default {
-  name: 'ArticleComponent'
+  name: 'ArticleComponent',
+  data () {
+    return {
+      moreInfoSelected: false
+    }
+  },
+  methods: {
+    // Funcionalidad que despliega el panel de mas opciones
+    moreInfoAction (e) {
+      // Toggle sobre la clase 'active' en el span
+      e.target.classList.toggle('active')
+      // Muestra u oculta panel
+      this.moreInfoSelected = !this.moreInfoSelected
+    }
+  }
 }
 </script>
 
@@ -96,6 +110,11 @@ export default {
           float: right;
           margin-left: 14px;
           background-size: 14px 21px;
+          transition: all .2s linear;
+        }
+
+        &.active::after {
+          transform: rotate(-180deg) translateY(-7%);
         }
       }
     }
@@ -106,6 +125,14 @@ export default {
       color: $news-more-info-color;
       font-size: 14px;
       padding-left: 80px;
+      max-height: 0;
+      transition: all .5s ease-in-out;
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+        max-height: 100%;
+      }
 
       &__title {
         margin-top: 0;
