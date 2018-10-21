@@ -109,7 +109,6 @@ export default {
 
   .tabs-container {
     @include display-flex($direction: column);
-    overflow: hidden;
     background: $tabs-bgcolor-color;
     font-family: $tabs-font-family;
 

@@ -120,23 +120,23 @@ export default {
         color: $info-info-color;
         font-family: $info-info-font-family;
         font-weight: 700;
+        position: relative;
         font-size: 14px;
         cursor: pointer;
 
         &::after {
-          content: '';
-          background-image: url('../assets/accordion-component/angle-down-blue.svg');
-          width: 14px;
-          height: 21px;
+          content: url('../assets/accordion-component/angle-down-blue.svg');
           display: block;
+          position: absolute;
+          top: 2px;
+          right: -30px;
           float: right;
           margin-left: 14px;
-          background-size: 14px 21px;
           transition: all .2s linear;
         }
 
         &.active::after {
-          transform: rotate(-180deg) translateY(-7%);
+          transform: rotate(-180deg) translateY(10%);
         }
       }
     }
@@ -148,7 +148,8 @@ export default {
       font-size: 14px;
       padding-left: 55px;
       max-height: 0;
-      transition: all .5s ease-in-out;
+      overflow: hidden;
+      transition: opacity .5s ease-in-out;
       opacity: 0;
       margin-top: 18px;
 
