@@ -111,6 +111,7 @@ export default {
     @include display-flex($direction: column);
     background: $tabs-bgcolor-color;
     font-family: $tabs-font-family;
+    overflow: hidden;
 
     &__tabs {
       @include display-flex($justify: flex-end);
