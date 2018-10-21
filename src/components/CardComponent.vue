@@ -27,7 +27,7 @@ export default {
     },
     items: {
       type: Array,
-      default: () => ['Sin régimen', 'Botella de agua de bienvenida']
+      default: () => []
     }
   },
   data () {

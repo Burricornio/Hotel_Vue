@@ -35,6 +35,10 @@ export default {
     padding: 0 30px;
     position: relative;
 
+    ~ .accordion-container {
+      margin-top: 24px;
+    }
+
     &__label {
       position: absolute;
       top: 0;
