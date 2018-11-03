@@ -1,4 +1,4 @@
-# prueba-thecocktail
+# Proyecto Hotel Vue
 
 > A Vue.js project
 
